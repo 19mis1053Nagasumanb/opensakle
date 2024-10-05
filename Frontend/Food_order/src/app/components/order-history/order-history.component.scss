@@ -1,0 +1,23 @@
+.order-history {
+    padding: 20px;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    p {
+      margin: 5px 0;
+    }
+  
+    .order {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  

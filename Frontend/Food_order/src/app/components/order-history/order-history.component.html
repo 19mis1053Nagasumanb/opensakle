@@ -1,0 +1,10 @@
+<div class="order-history">
+  <h2>Order History</h2>
+  <div *ngFor="let order of orderHistory">
+    <p>Date: {{ order.orderDate | date:'short' }} | Status: {{ order.status }}</p>
+    <div *ngFor="let item of order.items">
+      <p>{{ item.name }} (x{{ item.quantity }}) - {{ item.price }}$</p>
+    </div>
+    <p>Total Price: {{ calculateTotal(order.items) }}$</p>
+  </div>
+</div>

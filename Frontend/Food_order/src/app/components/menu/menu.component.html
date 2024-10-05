@@ -1,0 +1,27 @@
+<div class="menu-container">
+    <h1>Menu</h1>
+    <div class="order-inputs">
+      <input type="number" [(ngModel)]="tableNumber" placeholder="Table Number" required>
+      <input type="text" [(ngModel)]="contactNumber" placeholder="Contact Number (optional)">
+    </div>
+    
+    <div *ngFor="let item of menuItems" class="menu-item">
+      <h3>{{ item.name }}</h3>
+      <p>Price: {{ item.price }}$</p>
+      <p>Available: {{ item.available_quantity }}</p>
+      <p>Category: {{ item.category }}</p>
+      <img [src]="item.imageUrl" alt="{{ item.name }}" width="100" height="100" />
+
+      <button (click)="addToOrder(item)">Add to Order</button>
+    </div>
+    
+    <h2>Your Order</h2>
+    <div *ngFor="let order of orders" class="order-item">
+      <p>{{ order.name }} (Quantity: {{ order.quantity }})</p>
+    </div>
+    <p>Total: {{ calculateTotal() }}$</p>
+    <button (click)="placeOrder()">Place Order</button>
+    <button routerLink="/order-history">View Order History</button>
+
+  </div>
+  
